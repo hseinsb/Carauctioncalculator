@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Auction Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Car Auction Calculator</h1>
+    <p>This calculator helps car flippers and auction buyers determine the maximum bid price for vehicles at auction, ensuring profitability. By inputting estimated resale values, costs, and desired profit margins, users can calculate the ideal bid to place, considering all associated expenses and their profit objectives. Adjust the inputs according to whether the car has a clean or salvage title to get tailored bidding recommendations.</p>
+    <form id="calculator-form">
+        <label for="erv">Estimated Resale Value ($):</label>
+        <input type="number" id="erv" name="erv" required>
+        <small>Enter the expected sale price after repairs.</small><br><br>
+
+        <label for="titleStatus">Title Status:</label>
+        <select id="titleStatus" name="titleStatus" required>
+            <option value="clean">Clean Title</option>
+            <option value="salvage">Salvage Title</option>
+        </select>
+        <small>Salvage titles reduce the resale value by 20% due to legal status.</small><br><br>
+
+        <label for="rc">Repair Costs ($):</label>
+        <input type="number" id="rc" name="rc" required>
+        <small>Include all parts and labor costs for necessary repairs.</small><br><br>
+
+        <label for="af">Auction Fees ($):</label>
+        <input type="number" id="af" name="af" required>
+        <small>Fees charged by the auction house.</small><br><br>
+
+        <label for="th">Transportation and Handling ($):</label>
+        <input type="number" id="th" name="th" required>
+        <small>Costs for transporting the car from the auction to your location.</small><br><br>
+
+        <label for="lc">Labor Cost ($):</label>
+        <input type="number" id="lc" name="lc" required>
+        <small>Additional labor costs for detailing or modifications.</small><br><br>
+
+        <label for="oc">Other Costs ($):</label>
+        <input type="number" id="oc" name="oc" required>
+        <small>Any other unforeseen expenses during the repair and sale process.</small><br><br>
+
+        <label for="profit">Desired Profit (%):</label>
+        <input type="number" id="profit" name="profit" min="0" max="100" required>
+        <small>The profit margin you aim to achieve on the resale.</small><br><br>
+
+        <button type="button" onclick="calculateMaxBid()">Calculate Max Bid</button>
+    </form>
+    <div id="result" style="margin-top: 20px; font-size: 20px; color: green;"></div>
+    <script src="calculator.js"></script>
+</body>
+</html>
